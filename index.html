@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            color: #444;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #2a567d;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .block {
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            color: #333;
+        }
+        .block button {
+            width: 100%;
+            background: #5ab4f8;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .block button:hover {
+            background: #409bdb;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>　　　　　</h1>
+    <div class="container">
+        <!-- 1つ目の乱数生成ブロック -->
+        <div class="block">
+            <button onclick="generateRandomNumber(this, 1, 12)">12</button>
+        </div>
+        
+        <!-- 2つ目の乱数生成ブロック -->
+        <div class="block">
+            <button onclick="generateRandomNumber(this, 1, 31)">31</button>
+        </div>
+    </div>
+
+    <script>
+        function generateRandomNumber(button, min, max) {
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            button.textContent = randomNumber; // ボタン自体のテキストを変更
+        }
+    </script>
+</body>
+</html>
